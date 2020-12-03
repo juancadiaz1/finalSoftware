@@ -1,0 +1,65 @@
+{"data":{"data":[
+
+    {
+        "id":"1",
+        "marca":"Mitsubishi",
+        "nombre":"Lancer Evolution",
+        "modelo":"2010",
+        "kms":"25.680",
+        "cal":"4.8/5.0",
+        "img":"https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2019/10/mitsubishi-lancer-evo.jpg"
+    },
+
+    {
+        "id":"2",
+        "marca":"Volkswagen",
+        "nombre":"Gol GTI",
+        "modelo":"2018",
+        "kms":"3.500",
+        "cal":"4.5/5.0",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Volkswagen_Gol_1.6_Power_2013_%2812489173025%29.jpg/1200px-Volkswagen_Gol_1.6_Power_2013_%2812489173025%29.jpg"
+    },
+
+    {
+        "id":"3",
+        "marca":"Renault",
+        "nombre":"Sandero",
+        "modelo":"2015",
+        "kms":"10.750",
+        "cal":"4.6/5.0",
+        "img":"https://www.revistaautocrash.com/wp-content/uploads/2017/03/Edicion-41/ICRV-RENAULT-SANDERO/sandero-1.jpg"
+    },
+
+    {
+        "id":"4",
+        "marca":"Nissan",
+        "nombre":"March",
+        "modelo":"2019",
+        "kms":"2.450",
+        "cal":"4.9/5.0",
+        "img":"https://s3-us-west-2.amazonaws.com/static.izmocars.com/vehicleimages/400x300/dealers/226/3N1CK3CD8KL218879_1.jpg"
+    },
+
+    {
+        "id":"5",
+        "marca":"Chevrolet",
+        "nombre":"Sail LS",
+        "modelo":"2019",
+        "kms":"1.900",
+        "cal":"5.0/5.0",
+        "img":"https://http2.mlstatic.com/chevrolet-sail-ls-mt-2019-D_NQ_NP_770051-MCO40790999323_022020-F.webp"
+
+    },
+
+    {
+        "id":"6",
+        "marca":"Toyota",
+        "nombre":"Corolla",
+        "modelo":"2010",
+        "kms":"100.340",
+        "cal":"4.8/5.0",
+        "img":"https://www.elautolote.com/files/12-2019/ad16189/toyota-corolla-2023029353_large.jpeg"
+    }
+]
+}
+}

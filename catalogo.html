@@ -1,0 +1,179 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<html>
+	<head>
+        <title>AutosBogotá Alquiler de automoviles</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+		<style type="text/css">
+			
+			ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: red;
+                }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 10px 76px;
+                text-decoration: none;
+                width: 100px;
+                font-family: "Audiowide",sans-serif;
+            }
+
+            li a:hover {
+                background-color: #333;
+            }
+
+            #header {
+
+                text-align: right;
+                margin: auto;
+                width: 1000px;
+                color: white;
+                font-style: initial;
+                font:x-large;
+                font-family: "Audiowide",sans-serif;
+                background-image: url("carros.jpg");
+                background-size: 1800px 850px;
+                
+                
+
+            }
+
+            #app {
+
+                color: black;
+                margin: auto;
+                text-align: center;
+                font-family: "Audiowide",sans-serif;
+                background-image: url("renta.png");
+
+
+            }
+
+            #tabla {
+
+                width: 70%;
+                color: black;
+                margin: auto;
+                border: hidden;
+                background-color: beige;
+            
+            
+            }
+
+            #tabla2 {
+
+                background-color: black;
+                color: white;
+
+            }
+            #imagen {
+
+                width: 100%;
+                
+                
+            }
+
+            body {
+
+                background-color:
+            }
+
+            #button {
+
+                width: 100%; /* Para que no se rompa en dos líneas, y lo translade tal cual. */
+                margin-left: 50%;
+                transform: translateX(-50%);
+
+            }
+            
+			
+		</style>
+	</head>
+	<body>
+		<div id="header">
+
+            <h1 id="nombre">AUTOS BOGOTÁ</h1>
+        
+        </div>
+        
+
+        <div id="menu">
+        
+        <ul>
+          <li><a class="active" href="home.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catalogo</a></li>
+          <li><a href="reservas.html">Reservar</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#registro">Registrarse</a></li>
+        </ul>
+        
+        </div>
+
+        <div id="app">
+
+            <h1>Catalogo actualizado de automoviles</>
+            
+                <br>
+                <br>
+
+
+            <table id="tabla" border="1px" cellspacing="0">
+            
+                <tr id="tabla2">
+
+                    <th>Marca</>
+                    <th>Nombre</>
+                    <th>Modelo</>
+                    <th>Kms</>
+                    <th>Calificacion</>
+                    <th>Foto</>
+                
+                </tr>
+            
+
+                <tr v-for="item in info">
+                
+                    <td>{{item.marca}}</>
+                    <td>{{item.nombre}}</>
+                    <td>{{item.modelo}}</>
+                    <td>{{item.kms}}</>
+                    <td>{{item.cal}}</>    
+                <td>
+                    <img :src="item.img" id="imagen"></>
+                    <button id="button" onclick="location.href='reservas.html' ">Reservar</button>
+                </td>
+                
+                </tr>
+            
+        </div>
+
+        <script>
+            new Vue({
+                 el: '#app',
+                 data: { info:[] },
+            
+                 mounted () {
+            
+                axios.get('http://localhost:3000/data')
+                        .then(response => (this.info = response.data.data)) 
+            
+                }
+                
+                
+            })
+            
+                             
+        </script>
+
+	</body>
+</html>

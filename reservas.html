@@ -1,0 +1,259 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+<head>
+        <title>AutosBogotá Alquiler de automoviles</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+		<style type="text/css">
+			
+			ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: red;
+                }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 10px 76px;
+                text-decoration: none;
+                width: 100px;
+                font-family: "Audiowide",sans-serif;
+            }
+
+            li a:hover {
+                background-color: #333;
+            }
+
+            #header {
+
+                text-align: right;
+                margin: auto;
+                width: 1000px;
+                color: white;
+                font-style: initial;
+                font:x-large;
+                font-family: "Audiowide",sans-serif;
+                background-image: url("carros.jpg");
+                background-size: 1800px 850px;
+                
+                
+
+            }
+
+
+            #tabla {
+
+                width: 70%;
+                color: black;
+                margin: auto;
+                border: hidden;
+                background-color: beige;
+            
+            
+            }
+
+            #tabla2 {
+
+                background-color: black;
+                color: white;
+
+            }
+            #imagen {
+
+                width: 100%;
+                
+                
+            }
+
+            body {
+
+                background-image: url("fondo.jpg")
+            }
+
+            #button {
+
+                width: 50%; /* Para que no se rompa en dos líneas, y lo translade tal cual. */
+                
+
+            }
+
+            .column {
+                float: left;
+                width: 30%;
+                padding: 15px;
+            }
+
+                /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+                /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+            @media screen and (max-width:600px) {
+            .column {
+                    width: 100%;
+                }
+            }
+            
+            #title{
+
+                text-align: center;
+                font-family: "Audiowide",sans-serif;
+            }
+			
+            
+		</style>
+	</head>
+	<body>
+    <div id="app">
+		<div id="header">
+
+            <h1>AUTOS BOGOTÁ</h1>
+        
+        </div>
+        
+
+        <div id="menu">
+        
+            <ul>
+            <li><a class="active" href="home.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catalogo</a></li>
+            <li><a href="reservas.html">Reservar</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#registro">Registrarse</a></li>
+            </ul>
+        
+        </div>
+
+        
+
+            <h1 id="title">Formulario de Reservas</h1>
+
+
+            <div class="row">
+
+                <div class="column">
+                
+                    <h3>Nombres:</h3>
+                    <input v-model="nombre" type="text">
+                    
+                    <h3>Apellidos:</h3>
+                    
+                    <input v-model="apellido" type="text">
+
+                    <h3>Telefono:</h3>
+
+                    <input v-model="telefono" type="text">
+
+                    <h3>Direccion:</h3>
+
+                    <input v-model="direccion" type="text">
+
+                </div>
+
+                <div class="column">
+
+                    <h3>Automovil:</h3>
+                    
+                    <select v-model="automovil" id="automovil" name="automovil">
+                        <option value="Mitsubishi Lancer Evolution">Mitsubishi Lancer Evolution</option>
+                        <option value="Volkswagen Gol">Volkswagen Gol GTI</option>
+                        <option value="Renault Sandero">Renault Sandero</option>
+                        <option value="Toyota Corolla">Toyota Corolla</option>
+                        <option value="Chevrolet Sail LS">Chevrolet Sail LS</option>
+                        <option value="Nissan March">Nissan March</option>
+                        
+                    </select>
+
+                    <h3>Fecha:</h3>
+                    <input v-model="fecha" type="date">
+
+                    <h3>Dias de reserva:</h3>
+                    <input v-model="dias" type="text">
+                    <br>
+                    <br>
+                    <button id="button" v-on:click="f">Aceptar</button>
+
+
+
+                </div>
+
+                <div class="column">
+
+                    <h2 id="title">Cotizacion</h2>
+
+                    <table border="1px" cellspacing="0">
+
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Automovil</th>
+                            <th>Fecha</th>
+                            <th>Dias de reserva</th>
+                            <th>Valor a pagar</th>
+                        </tr>
+
+                        <tr v-for="p in usuarios">
+
+                            <td>{{p.nombre}}</td>
+                            <td>{{p.apellido}}</td>               
+                            <td>{{p.automovil}}</td>      
+                            <td>{{p.fecha}}</td>
+                            <td>{{p.dias}}</td>
+                            <td>${{Total}}</td>
+
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        
+    </div>
+
+        <script>
+
+            var usuarios1=[]
+            var app = new Vue(
+            {
+            
+                el: '#app',
+                data: {
+                   usuarios:usuarios1,
+                   Total:0
+                }, 
+                methods: {
+                    f:function(){
+                            var usuario = {
+                                nombre: this.nombre,
+                                apellido: this.apellido,
+                                automovil: this.automovil,
+                                fecha: this.fecha,
+                                dias: parseInt(this.dias)
+                                
+
+                                    }
+                                    
+                            
+                            this.usuarios.push(usuario);
+                            this.Total+=parseInt(300000*this.dias);
+                            
+            
+                        }
+            
+            
+                }
+            })
+            
+        </script>
+
+</body>

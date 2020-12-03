@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>AutosBogotá Alquiler de automoviles</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+		<style type="text/css">
+			
+			ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: black;
+                }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 10px 76px;
+                text-decoration: none;
+                width: 100px;
+                font-family: "Audiowide",sans-serif;
+            }
+
+            li a:hover {
+                background-color: #333;
+            }
+
+            #header {
+
+                text-align: right;
+                margin: auto;
+                width: 1000px;
+                color: white;
+                font-style: initial;
+                font:x-large;
+                font-family: "Audiowide",sans-serif;
+
+            }
+
+            body {
+                background-image: url("carros.jpg");
+                background-size: 1800px 850px;
+                background-position: top center;
+            }
+
+            #button {
+
+                width: 50%;
+                text-decoration: none;
+                padding: 10px;
+                font-weight: 600px;
+                font-size: 20px;
+                color: #ffffff;
+                background-color: #da1b1b;
+                border-radius: 6px;
+                border: 2px solid #ffffff;
+            }
+
+            #button:hover{
+                color: #000000;
+                background-color: #ffffff;
+            }
+            
+            #imagen {
+
+                width:50%;
+                border:2px solid #ffffff;
+            }
+			
+		</style>
+	</head>
+	<body>
+		<div id="header">
+
+            <h1 id="nombre">AUTOS BOGOTÁ</h1>
+        
+        </div>
+        
+
+        <div id="menu">
+        
+        <ul>
+          <li><a class="active" href="home.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catalogo</a></li>
+          <li><a href="reservas.html">Reservar</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#registro">Registrarse</a></li>
+        </ul>
+        
+        </div>
+
+        <div>
+
+            <br>
+            <br>
+            <button id="button" onclick="location.href='catalogo.html' ">Ver catalogo</button>
+            <br>
+            <img src="carros.png" id="imagen" onclick="location.href='catalogo.html'"></>
+            <br>
+            <button id="button" onclick="location.href='reservas.html' ">Reservar</button>
+            <br>
+            <img src="01.png" id="imagen" onclick="location.href='reservas.html'"></>
+
+        </div>
+
+	</body>
+</html>
